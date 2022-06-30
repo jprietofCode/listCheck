@@ -1,4 +1,9 @@
 const btn = document.querySelector('[data-form-btn]');
+/*
+insertBefore(padre, hijo): Coloca un nodo antes del otro
+replaceChild(elemento1, elemento2): Sustituye el nodo del elemento 1 por el nodo del elemento 2
+removeChild(elemento): Remueve un nodo del árbol
+*/
 //Arrow function ó funciones anonimas
 const createTask = (evento) =>{
     evento.preventDefault();
