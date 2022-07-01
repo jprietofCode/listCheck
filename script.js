@@ -3,8 +3,10 @@ insertBefore(padre, hijo): Coloca un nodo antes del otro
 replaceChild(elemento1, elemento2): Sustituye el nodo del elemento 1 por el nodo del elemento 2
 removeChild(elemento): Remueve un nodo del árbol
 */
-(() => {
-    const btn = document.querySelector('[data-form-btn]');
+//(() => {
+import checkComplete from "./components/checkComplete.js";
+import deleteIcon from "./components/deleteIcons.js";
+const btn = document.querySelector('[data-form-btn]');
 //Arrow function ó funciones anonimas
 const createTask = (evento) =>{
     evento.preventDefault();
@@ -21,29 +23,15 @@ const createTask = (evento) =>{
     titleTask.classList.add("task");
     titleTask.innerText = value;
     taskContent.appendChild(titleTask);
-    const content = `
-    <i class="fas fa-trash-alt trashIcon icon"></i>`
     //task.innerHTML=content;
     task.appendChild(taskContent)
+    task.appendChild(deleteIcon());
     list.appendChild(task)
 }
 
 btn.addEventListener("click", createTask)
 
-//función
-const checkComplete =() =>{
-    const i = document.createElement("i")
-    i.classList.add("far", "fa-check-square", "icon");
-    i.addEventListener("click", completeTask)
-    return i;
-};
-//Immediately invoked function expression IIFE, codgio al inicio 
-const completeTask = (event) =>{
-    const element = event.target;
-    //element.classList.add("fas", "completeIcon");
-    element.classList.toggle("fas");
-    element.classList.toggle("completeIcon");
-    //element.classList.remove("far");
-    element.classList.toggle("far");
-}
-})();
+//Aqui iba checkComplete
+
+//Aquí iba deleteIcon
+//})();
